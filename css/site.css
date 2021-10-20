@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #1d5888;
-    --secondary-color: #ff993b;
+    --primary-color: #000000;
+    --secondary-color: #ff0000;
     --dark-color: #292929;
     --white-color: #dff3e4;
 }
@@ -29,9 +29,6 @@ footer .social>a {
     opacity: 0.75;
 }
 
-main .chkb {
-    color: green;
-}
 
 footer .social>a:hover {
     color: var(--secondary-color);

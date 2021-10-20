@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>App Name: A coding project by Pavlin Hristov</title>
+    <title>Rewind: A coding project by Pavlin Hristov</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -30,7 +30,7 @@
     <!-- ===== Nav Section ========= -->
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/img/logo/Logo_initials.png" class="d-inline-block align-text-botom" width="36" alt=""> APP NAME</a>
+            <a class="navbar-brand" href="#"><img src="/img/logo/Logo_initials.png" class="d-inline-block align-text-botom" width="36" alt=""> Rewind</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -47,7 +47,7 @@
                         <a class="nav-link active" aria-current="page" href="code.html">The Code</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">Git Repo</a>
+                        <a class="nav-link" target="_blank" href="https://github.com/PHHristov/Rewind">Git Repo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="#">About</a>
@@ -59,22 +59,49 @@
     <!-- ===== Main Section ========= -->  
     <main class="flex-shrink-0">
         <div class="container py- px-5">
-            <h2 class="border-1 border-bottom border-dark py-1">The code for APP NAME</h2>
+            <h2 class="border-1 border-bottom border-dark py-1">The code for Rewind</h2>
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8" >
                     <pre class="line-numbers">
                         <code class="language-javascript">
-                            // Here we go again...
-                                function HelloWorld(){
-                                    alert("Hello World!")
+                            // GET the string
+                            function getTheString(){
+                                document.getElementById("alert").classList.add("invisible");
+                                let urText = document.getElementById("userString").value;
+                                let revText = reverseTheString(urText)
+                                displayTheString(revText)
+                            }
+
+                            // Reverse the string
+                            function reverseTheString(urText){
+                                if (userString.length > 1) {
+                                    let revString = [];
+                                    for (let index = urText.length - 1; index >= 0; index--) {
+                                        revString += urText[index];
+                                    }
+                                }   
+                                else {
+                                    alert("You must enter atleast 2 characters in order to reverse!")
                                 }
+                                return revString;
+                            }
+
+                            // Display the string
+                            function displayTheString(revText){
+                                document.getElementById("msg").innerHTML = `Your reversed string is: ${revText}`;
+                                document.getElementById("alert").classList.remove("invisible");
+                            }
                         </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                   <p> The Code is structured in one function</p>
-                   <h5>Hello World</h5>
-                   <p>HelloWorld is a function that displays an alert message with "Hello world"</p>
+                   <h5>getTheString</h5>
+                   <p>This is the main function that we call once the reverse me button is clicked. <br>First we add the invisible class to the alert element, so that on every button click the alert disappears. <br>After that we get the value we want to reverse and use the reverseTheString function to return a reversed string. In the end we display the reversed string. <br><br></p>
+                   <h5>reverseTheString</h5>
+                   <p>input: urText(string) <br>Here we check if the length of the string is greater than one, if not we throw an alert message. If the string is greater than 1 we are creating a revString array where we will store the outcome. Now using for loop we are getting all the indexes of the string in reverse order. That way we can add the corresponding letter to the revString array and return it. <br><br></p>
+                   <h5>displayTheString</h5>
+                   <p>input: revText(string) <br> Here we simply remove the invisible class from the alert element and update the inner HTML to the input.</p>
+                   
                 </div>
             </div>
         </div>
@@ -86,7 +113,7 @@
                 <div class="col text-light order-last order-lg-first">
                     <div class="pt-3"><span class="text-muted">&copy; 2021</span> Pavlin Hristov | pavlin.hristov101@gmail.com</div>
                 </div>
-                <div class="col d-flex align-items-center justify-content-start justify-content-lg-center"><img src="/img/logo/Logo_cropped.png" alt="Pavlin Hristov Logo" height="50" width="190"></div>
+                <div class="col d-flex align-items-center justify-content-start justify-content-lg-center"><img src="/img/logo/Logo_cropped_no_ini.png" alt="Pavlin Hristov Logo" height="42" width="160"></div>
                 <div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
                     <div class="row">
                         <div class="col social"><a href="https://www.linkedin.com/in/pavlin-hristov-8b3655145/"><i class="fab fa-linkedin fa-2x"></i></a></div>
